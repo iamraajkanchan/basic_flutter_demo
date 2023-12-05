@@ -38,7 +38,7 @@ class _AlbumsFetcher extends State<AlbumsFetcher> {
   void initState() {
     super.initState();
     futureAlbumList = fetchAlbums();
-    futureAlbumList.then((value) => {albumList = value});
+    futureAlbumList.then((value) => {albumList = value}).onError((error, stackTrace) => Future.error(error!, stackTrace));
   }
 
   @override
