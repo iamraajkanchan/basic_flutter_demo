@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:basic_flutter_demo/views/album_view.dart';
 import 'package:flutter/material.dart';
 import '../model/album.dart';
 import 'package:http/http.dart' as http;
@@ -44,15 +45,13 @@ class _AlbumsFetcher extends State<AlbumsFetcher> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(title: Text(widget.pageTitle)),
         body: ListView.builder(
             itemCount: albumList.length,
             itemBuilder: (context, index) {
               final album = albumList[index];
-              return ListTile(
-                title: Text("${album.id}"),
-                subtitle: Text(album.title),
-              );
+              return AlbumView(album: album,);
             }));
   }
 }
