@@ -1,6 +1,5 @@
 import 'package:basic_flutter_demo/model/album.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AlbumView extends StatelessWidget {
   final Album album;
@@ -10,31 +9,40 @@ class AlbumView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        DecoratedBox(
-          decoration: const BoxDecoration(
-            color: Colors.lime,
-            shape: BoxShape.rectangle
+        child: Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          DecoratedBox(
+            decoration:
+                const BoxDecoration(color: Colors.lime, shape: BoxShape.circle),
+            child: SizedBox(
+              width: 100.0,
+              height: 100.0,
+              child: Center(
+                child: Text(
+                  "${album.id}",
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 36.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
           ),
-          child: Text(
-            "${album.id}",
-            style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold),
+          const Spacer(
+            flex: 1,
           ),
-        ),
-        const Spacer(flex: 1,),
-        Expanded(
-            flex: 4,
-            child: Text(
-              album.title,
-              softWrap: true,
-              maxLines: 2,
-            ))
-      ],
+          Expanded(
+              flex: 7,
+              child: Text(
+                album.title,
+                softWrap: true,
+                maxLines: 2,
+              ))
+        ],
+      ),
     ));
   }
 }
