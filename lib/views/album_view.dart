@@ -8,8 +8,7 @@ class AlbumView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Padding(
+    return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,6 +42,6 @@ class AlbumView extends StatelessWidget {
               ))
         ],
       ),
-    ));
+    );
   }
 }
