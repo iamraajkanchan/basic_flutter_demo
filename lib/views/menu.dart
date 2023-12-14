@@ -2,6 +2,7 @@ import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
+import 'package:basic_flutter_demo/views/video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -27,8 +28,9 @@ class Menu extends StatelessWidget {
     }
 
     void onVideoPlayerClick() {
-      Fluttertoast.showToast(
-          msg: "View Player is in progress!", toastLength: Toast.LENGTH_SHORT);
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const VideoPlayerDemo(pageTitle: "Video Player Preview")));
     }
 
     return Scaffold(
