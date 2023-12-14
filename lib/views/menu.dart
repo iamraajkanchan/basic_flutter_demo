@@ -1,6 +1,9 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
+import 'package:basic_flutter_demo/views/image_picker.dart';
+import 'package:basic_flutter_demo/views/utility.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -17,6 +20,17 @@ class Menu extends StatelessWidget {
           builder: (context) => const AlbumsFetcher(pageTitle: "Album List")));
     }
 
+    void onCameraPreviewClick() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const ImagePickerDemo(pageTitle: "ImagePicker Preview")));
+    }
+
+    void onVideoPlayerClick() {
+      Fluttertoast.showToast(
+          msg: "View Player is in progress!", toastLength: Toast.LENGTH_SHORT);
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(),
@@ -25,20 +39,41 @@ class Menu extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            Utility.addHorizontalSpace(),
             Expanded(
                 flex: 1,
                 child: ElevatedButton(
                   onPressed: onAlbumClick,
-                  child: const Padding(
-                      padding: EdgeInsets.all(24.0), child: Text("Album")),
+                  child: const Text("Album"),
                 )),
+            Utility.addHorizontalSpace(),
             Expanded(
                 flex: 1,
                 child: ElevatedButton(
                   onPressed: onAlbumsClick,
-                  child: const Padding(
-                      padding: EdgeInsets.all(24.0), child: Text("Albums")),
-                ))
+                  child: const Text("Albums"),
+                )),
+            Utility.addHorizontalSpace(),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Utility.addHorizontalSpace(),
+            Expanded(
+                flex: 1,
+                child: ElevatedButton(
+                  onPressed: onCameraPreviewClick,
+                  child: const Text("Camera"),
+                )),
+            Utility.addHorizontalSpace(),
+            Expanded(
+                flex: 1,
+                child: ElevatedButton(
+                  onPressed: onVideoPlayerClick,
+                  child: const Text("Video Player"),
+                )),
+            Utility.addHorizontalSpace(),
           ],
         )
       ]),
