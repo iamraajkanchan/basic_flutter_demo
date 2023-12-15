@@ -24,8 +24,22 @@ class _VideoPlayerDemo extends State<VideoPlayerDemo> {
       ..initialize().then((_) {
         setState(() {});
       });
-    if(_controller.value.isCompleted) {
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    super.setState(fn);
+    print("${Utility.TAG} :: VideoPlayerDemo :: setState");
+    if (_controller.value.isCompleted) {
       print("${Utility.TAG} :: VideoPlayerDemo :: initState :: isCompleted");
+      _controller.seekTo(const Duration(
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+        milliseconds: 0,
+        microseconds: 0,
+      ));
     }
   }
 
