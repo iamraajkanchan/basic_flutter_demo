@@ -66,7 +66,7 @@ class Menu extends StatelessWidget {
                 flex: 1,
                 child: ElevatedButton(
                   onPressed: onCameraPreviewClick,
-                  child: const Text("Camera"),
+                  child: const Text("Image Picker"),
                 )),
             Utility.addHorizontalSpace(),
             Expanded(

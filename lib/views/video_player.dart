@@ -16,6 +16,7 @@ class _VideoPlayerDemo extends State<VideoPlayerDemo> {
 
   @override
   void initState() {
+    print("${Utility.TAG} :: VideoPlayerDemo :: initState");
     super.initState();
     const String videoUrl =
         "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
@@ -23,6 +24,9 @@ class _VideoPlayerDemo extends State<VideoPlayerDemo> {
       ..initialize().then((_) {
         setState(() {});
       });
+    if(_controller.value.isCompleted) {
+      print("${Utility.TAG} :: VideoPlayerDemo :: initState :: isCompleted");
+    }
   }
 
   @override
