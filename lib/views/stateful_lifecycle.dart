@@ -60,6 +60,7 @@ class _StatefulLifecycle extends State<StatefulLifecycle> {
 
   @override
   Widget build(BuildContext context) {
+    print("${Utility.TAG} :: StatefulLifecycle :: build");
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.pageTitle),
@@ -88,7 +89,8 @@ class _StatefulLifecycle extends State<StatefulLifecycle> {
  * 15:25:36.623  I  MyFlutterApp :: StatefulLifecycle :: createState
  * 15:25:36.624  I  MyFlutterApp :: StatefulLifecycle :: initState
  * 15:25:36.624  I  MyFlutterApp :: StatefulLifecycle :: didChangeDependencies
- * ---- The above lifecycle method is called before user sees the widget -------
+ * 23:09:14.309  I  MyFlutterApp :: StatefulLifecycle :: build
+ * ---- The above 4 lifecycle method is called before user sees the widget -----
  * 15:25:45.194  I  MyFlutterApp :: StatefulLifecycle :: setState
  * ---- The above lifecycle method is called if user interacts with the Widget -
  * 15:25:49.155  I  MyFlutterApp :: StatefulLifecycle :: deactivate
