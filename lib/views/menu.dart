@@ -1,6 +1,7 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
+import 'package:basic_flutter_demo/views/provider_demo.dart';
 import 'package:basic_flutter_demo/views/stateful_lifecycle.dart';
 import 'package:basic_flutter_demo/views/stateless_lifecycle.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
@@ -45,6 +46,17 @@ class Menu extends StatelessWidget {
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) =>
               const StatefulLifecycle(pageTitle: "Stateful Widget Lifecycle")));
+    }
+
+    void onProviderDemoClick() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const ProviderDemo(pageTitle: "Provider Demo")));
+    }
+
+    void onBlocDemoClick() {
+      Fluttertoast.showToast(
+          msg: "Bloc Demo is in progress!", toastLength: Toast.LENGTH_LONG);
     }
 
     return Scaffold(
@@ -99,9 +111,9 @@ class Menu extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: ElevatedButton(
-                  onPressed: onStateLessLifecycleClick,
+                  onPressed: onProviderDemoClick,
                   child: const Text(
-                    "StateLess Widget Lifecycle",
+                    "Provider Demo",
                     textAlign: TextAlign.center,
                   ),
                 )),
@@ -109,9 +121,9 @@ class Menu extends StatelessWidget {
             Expanded(
                 flex: 1,
                 child: ElevatedButton(
-                  onPressed: onStatefulLifecycleClick,
+                  onPressed: onBlocDemoClick,
                   child: const Text(
-                    "Stateful Widget Lifecycle",
+                    "Bloc Demo",
                     textAlign: TextAlign.center,
                   ),
                 )),

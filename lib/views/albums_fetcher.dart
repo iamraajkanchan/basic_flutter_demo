@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:basic_flutter_demo/views/album_view.dart';
 import 'package:flutter/material.dart';
-import '../model/album.dart';
+import '../models/album.dart';
 import 'package:http/http.dart' as http;
 
 class AlbumsFetcher extends StatefulWidget {

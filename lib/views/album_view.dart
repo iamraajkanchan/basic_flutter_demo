@@ -1,4 +1,4 @@
-import 'package:basic_flutter_demo/model/album.dart';
+import 'package:basic_flutter_demo/models/album.dart';
 import 'package:flutter/material.dart';
 
 class AlbumView extends StatelessWidget {

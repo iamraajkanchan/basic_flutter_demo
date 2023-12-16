@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../model/album.dart';
+import '../models/album.dart';
 
 class AlbumFetcher extends StatefulWidget {
   const AlbumFetcher({super.key, required this.pageTitle});
