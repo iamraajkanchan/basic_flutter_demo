@@ -23,11 +23,10 @@ class _AlbumsFetcher extends State<AlbumsFetcher> {
     final response =
     await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
     if (response.statusCode == 200) {
-      List<Album> albumList = [];
       String stringResponse = response.body;
-      List<dynamic> tempList = json.decode(stringResponse);
+      final tempList = json.decode(stringResponse);
       setState(() {
-        for (int i = 0; i < tempList.length; i++) {
+        for (var i = 0; i < tempList.length; i++) {
           Album album = Album.fromJson(tempList[i]);
           albumList.add(album);
         }

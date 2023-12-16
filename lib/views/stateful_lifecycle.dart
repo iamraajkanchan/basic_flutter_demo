@@ -14,7 +14,7 @@ class StatefulLifecycle extends StatefulWidget {
 }
 
 class _StatefulLifecycle extends State<StatefulLifecycle> {
-  int counter = 0;
+  var counter = 0;
 
   @override
   void initState() {
