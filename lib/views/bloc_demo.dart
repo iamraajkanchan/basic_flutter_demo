@@ -1,5 +1,6 @@
 import 'package:basic_flutter_demo/blocs/internet_blocs/internet_bloc.dart';
 import 'package:basic_flutter_demo/views/bloc_demo/bloc_internet_connectivity.dart';
+import 'package:basic_flutter_demo/views/bloc_demo/cubit_internet_connectivity.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,12 @@ class _BlocDemo extends State<BlocDemo> {
             )));
   }
 
+  void onCubitInternetConnectivityClick() {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => const CubitInternetConnectivity(
+            pageTitle: "Cubit Internet Connectivity Demo")));
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -37,8 +44,13 @@ class _BlocDemo extends State<BlocDemo> {
               children: <Widget>[
                 Utility.addVerticalSpace(),
                 ElevatedButton(
-                    onPressed: onInternetConnectivityClick,
-                    child: const Text("Internet connectivity")),
+                  onPressed: onInternetConnectivityClick,
+                  child: const Text("Bloc Internet Connectivity"),
+                ),
+                Utility.addVerticalSpace(),
+                ElevatedButton(
+                    onPressed: onCubitInternetConnectivityClick,
+                    child: const Text("Cubit Internet Connectivity"))
               ],
             ),
           ),
