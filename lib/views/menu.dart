@@ -57,7 +57,7 @@ class Menu extends StatelessWidget {
 
     void onBlocDemoClick() {
       Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => const BlocDemo(pageTitle: "Provider Demo")));
+          builder: (context) => const BlocDemo(pageTitle: "Bloc Demo")));
     }
 
     return Scaffold(
