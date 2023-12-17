@@ -1,5 +1,6 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
+import 'package:basic_flutter_demo/views/bloc_demo.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
 import 'package:basic_flutter_demo/views/provider_demo.dart';
 import 'package:basic_flutter_demo/views/stateful_lifecycle.dart';
@@ -55,8 +56,8 @@ class Menu extends StatelessWidget {
     }
 
     void onBlocDemoClick() {
-      Fluttertoast.showToast(
-          msg: "Bloc Demo is in progress!", toastLength: Toast.LENGTH_LONG);
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const BlocDemo(pageTitle: "Provider Demo")));
     }
 
     return Scaffold(
