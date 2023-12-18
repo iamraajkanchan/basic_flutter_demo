@@ -66,6 +66,9 @@ class BlocValidation extends StatelessWidget {
                   width: 200,
                   child: BlocBuilder<SignInBloc, SignInState>(
                     builder: (context, state) {
+                      if (state is SignInLoadingState) {
+                        return const CircularProgressIndicator();
+                      }
                       return ElevatedButton(
                         onPressed: () {
                           if (state is SignInValidState) {
