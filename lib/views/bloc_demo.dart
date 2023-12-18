@@ -1,5 +1,7 @@
 import 'package:basic_flutter_demo/blocs/internet_blocs/internet_bloc.dart';
+import 'package:basic_flutter_demo/blocs/sign_in_blocs/sign_in_bloc.dart';
 import 'package:basic_flutter_demo/views/bloc_demo/bloc_internet_connectivity.dart';
+import 'package:basic_flutter_demo/views/bloc_demo/bloc_validation.dart';
 import 'package:basic_flutter_demo/views/bloc_demo/cubit_internet_connectivity.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +52,18 @@ class _BlocDemo extends State<BlocDemo> {
                 Utility.addVerticalSpace(),
                 ElevatedButton(
                     onPressed: onCubitInternetConnectivityClick,
-                    child: const Text("Cubit Internet Connectivity"))
+                    child: const Text("Cubit Internet Connectivity")),
+                Utility.addVerticalSpace(),
+                BlocProvider(
+                  create: (context) => SignInBloc(),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BlocValidation(
+                                pageTitle: "Bloc Validation Demo")));
+                      },
+                      child: const Text("Bloc Validation")),
+                ),
               ],
             ),
           ),
