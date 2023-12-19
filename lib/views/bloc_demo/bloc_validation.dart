@@ -1,6 +1,5 @@
 import 'package:basic_flutter_demo/blocs/sign_in_blocs/sign_in_bloc.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

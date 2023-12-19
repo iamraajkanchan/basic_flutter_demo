@@ -8,7 +8,6 @@ import 'package:basic_flutter_demo/views/stateless_lifecycle.dart';
 import 'package:basic_flutter_demo/views/utility.dart';
 import 'package:basic_flutter_demo/views/video_player.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});

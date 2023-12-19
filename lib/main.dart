@@ -1,5 +1,3 @@
-import 'package:basic_flutter_demo/views/album_fetcher.dart';
-import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/menu.dart';
 import 'package:flutter/material.dart';
 
