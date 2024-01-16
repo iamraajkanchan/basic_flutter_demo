@@ -2,6 +2,7 @@ import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/bloc_demo.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
+import 'package:basic_flutter_demo/views/material_app.dart';
 import 'package:basic_flutter_demo/views/provider_demo.dart';
 import 'package:basic_flutter_demo/views/stateful_lifecycle.dart';
 import 'package:basic_flutter_demo/views/stateless_lifecycle.dart';
@@ -57,6 +58,12 @@ class Menu extends StatelessWidget {
     void onBlocDemoClick() {
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const BlocDemo(pageTitle: "Bloc Demo")));
+    }
+
+    void onMaterialAppClick() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const MaterialAppExample(pageTitle: "Material App")));
     }
 
     return Scaffold(
@@ -124,6 +131,32 @@ class Menu extends StatelessWidget {
                   onPressed: onBlocDemoClick,
                   child: const Text(
                     "Bloc Demo",
+                    textAlign: TextAlign.center,
+                  ),
+                )),
+            Utility.addHorizontalSpace(),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Utility.addHorizontalSpace(),
+            Expanded(
+                flex: 1,
+                child: ElevatedButton(
+                  onPressed: onMaterialAppClick,
+                  child: const Text(
+                    "Material App",
+                    textAlign: TextAlign.center,
+                  ),
+                )),
+            Utility.addHorizontalSpace(),
+            const Expanded(
+                flex: 1,
+                child: ElevatedButton(
+                  onPressed: null,
+                  child: Text(
+                    "Demo",
                     textAlign: TextAlign.center,
                   ),
                 )),
