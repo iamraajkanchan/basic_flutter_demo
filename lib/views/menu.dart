@@ -1,6 +1,7 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/bloc_demo.dart';
+import 'package:basic_flutter_demo/views/expense_tracker/expense_tracker_home.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
 import 'package:basic_flutter_demo/views/material_app.dart';
 import 'package:basic_flutter_demo/views/provider_demo.dart';
@@ -64,6 +65,12 @@ class Menu extends StatelessWidget {
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) =>
               const MaterialAppExample(pageTitle: "Material App")));
+    }
+
+    void onExpenseTrackerClick() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const ExpenseTrackerHome(pageTitle: "Expense Tracker")));
     }
 
     return Scaffold(
@@ -151,12 +158,12 @@ class Menu extends StatelessWidget {
                   ),
                 )),
             Utility.addHorizontalSpace(),
-            const Expanded(
+            Expanded(
                 flex: 1,
                 child: ElevatedButton(
-                  onPressed: null,
-                  child: Text(
-                    "Demo",
+                  onPressed: onExpenseTrackerClick,
+                  child: const Text(
+                    "Expense Tracker",
                     textAlign: TextAlign.center,
                   ),
                 )),
