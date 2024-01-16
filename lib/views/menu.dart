@@ -1,7 +1,8 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/bloc_demo.dart';
-import 'package:basic_flutter_demo/views/expense_tracker/expense_tracker_home.dart';
+import 'package:basic_flutter_demo/views/expense_tracker/widgets/expense_tracker_home.dart';
+import 'package:basic_flutter_demo/views/expense_tracker/expenses.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
 import 'package:basic_flutter_demo/views/material_app.dart';
 import 'package:basic_flutter_demo/views/provider_demo.dart';
@@ -68,9 +69,8 @@ class Menu extends StatelessWidget {
     }
 
     void onExpenseTrackerClick() {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) =>
-              const ExpenseTrackerHome(pageTitle: "Expense Tracker")));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const Expenses()));
     }
 
     return Scaffold(
