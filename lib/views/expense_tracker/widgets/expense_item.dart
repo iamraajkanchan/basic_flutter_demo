@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../models/expense.dart';
@@ -30,9 +29,9 @@ class _ExpenseItemState extends State<ExpenseItem> {
                 const Spacer(),
                 Row(
                   children: [
-                    const Icon(Icons.alarm),
-                    const SizedBox(width: 8),
-                    Text(widget.expense.date.toString())
+                    Icon(categoryIcons[widget.expense.category]),
+                    const SizedBox(width: 16),
+                    Text(widget.expense.formattedDate)
                   ],
                 )
               ],
