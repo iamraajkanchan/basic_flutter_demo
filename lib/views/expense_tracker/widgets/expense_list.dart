@@ -5,14 +5,21 @@ import '../models/expense.dart';
 
 class ExpenseList extends StatelessWidget {
   final List<Expense> expenses;
+  final Function(Expense expense) onExpenseRemoved;
 
-  const ExpenseList({super.key, required this.expenses});
+  const ExpenseList(
+      {super.key, required this.expenses, required this.onExpenseRemoved});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemCount: expenses.length,
-        itemBuilder: (context, index) => ExpenseItem(expense: expenses[index]));
+        itemBuilder: (context, index) => Dismissible(
+            key: ValueKey(expenses[index]),
+            onDismissed: (direction) {
+              onExpenseRemoved(expenses[index]);
+            },
+            child: ExpenseItem(expense: expenses[index])));
   }
 }
