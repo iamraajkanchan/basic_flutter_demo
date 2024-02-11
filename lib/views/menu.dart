@@ -1,9 +1,9 @@
 import 'package:basic_flutter_demo/views/album_fetcher.dart';
 import 'package:basic_flutter_demo/views/albums_fetcher.dart';
 import 'package:basic_flutter_demo/views/bloc_demo.dart';
-import 'package:basic_flutter_demo/views/expense_tracker/widgets/expense_tracker_home.dart';
 import 'package:basic_flutter_demo/views/expense_tracker/expenses.dart';
 import 'package:basic_flutter_demo/views/image_picker.dart';
+import 'package:basic_flutter_demo/views/location_tracking_demo/LocationTracking.dart';
 import 'package:basic_flutter_demo/views/material_app.dart';
 import 'package:basic_flutter_demo/views/provider_demo.dart';
 import 'package:basic_flutter_demo/views/stateful_lifecycle.dart';
@@ -71,6 +71,12 @@ class Menu extends StatelessWidget {
     void onExpenseTrackerClick() {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => const Expenses()));
+    }
+
+    void onLocationTrackingDemoClick() {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) =>
+              const LocationTracking(pageTitle: "Location Tracking Demo")));
     }
 
     return Scaffold(
@@ -168,6 +174,20 @@ class Menu extends StatelessWidget {
                   ),
                 )),
             Utility.addHorizontalSpace(),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Utility.addHorizontalSpace(),
+            Expanded(
+                child: ElevatedButton(
+              onPressed: onLocationTrackingDemoClick,
+              child: const Text(
+                "Track Location Demo",
+                textAlign: TextAlign.center,
+              ),
+            ))
           ],
         )
       ]),
